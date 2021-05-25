@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang=en>
+
+<head>
+    <meta charset=utf-8>
+    <title>Create R vector from unquoted text</title>
+    <script>
+
+        function myFunction() {
+            var delim = document.getElementById('delimiter');
+            var elem = document.getElementById('story');
+            var parts = elem.value.split(delim.value);
+            var quotedAndCommaSeparated = "'" + parts.join("', '") + "'";
+            var r_c = 'c(' + quotedAndCommaSeparated + ')'
+            console.log(delim.value)
+            bro.innerHTML = r_c;
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h3> Delimiter </h3>
+    <textarea id="delimiter" rows="1" cols="3"> </textarea>
+    <br>
+    <h3> Vector</h3>
+
+    <textarea id="story" rows="1" cols="33">input vector here</textarea>
+
+    <br>
+    <button onclick="myFunction()">Click for R vector</button>
+
+    <br>
+    <h3> Output</h3>
+
+    <div id="bro"></div>
+</body>
+
+</html>
